@@ -1,14 +1,13 @@
 # habit-tracker
 
-This template should help get you started developing with Vue 3 in Vite.
+## Description
 
-## Recommended IDE Setup
+>간단한 habit tracker
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Function
+- habit 추가
+- habit 삭제
+- 실행한 habit count
 
 ## Project Setup
 
@@ -16,14 +15,14 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+## Start
 
-```sh
-npm run dev
+```
+npm run start
 ```
 
-### Compile and Minify for Production
+## Techs
+- javascript
+- vue.js
 
-```sh
-npm run build
-```
+## Results

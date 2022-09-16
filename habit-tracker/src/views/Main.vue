@@ -1,20 +1,30 @@
-<script setup>
-import HabitAddForm from '../components/HabitAddForm.vue';
-import Header from '../components/Header.vue';
-import Habit from '../components/Habit.vue';
-</script>
-
 <template>
   <div class="container">
     <header class="header-container">
-      <Header />
+      <Header/>
     </header>
-    <HabitAddForm />
+    <HabitAddForm/>
     <main class="wrap">
-      <Habit />
+      <Habits/>
     </main>
   </div>
 </template>
+
+<script>
+
+import Header from "@/components/Header.vue";
+import HabitAddForm from "@/components/HabitAddForm.vue";
+import Habits from "@/components/Habits.vue";
+
+export default {
+  name: "Main",
+  components: {
+    Habits: Habits,
+    HabitAddForm: HabitAddForm,
+    Header: Header
+  },
+}
+</script>
 
 <style scoped>
 .header-container {
@@ -23,5 +33,8 @@ import Habit from '../components/Habit.vue';
 
 .wrap {
   margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 </style>

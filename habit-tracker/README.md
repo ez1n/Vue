@@ -2,22 +2,22 @@
 
 ## Description
 
->간단한 habit tracker
+>simple habit tracker
 
 ## Function
-- habit 추가
-- habit 삭제
-- 실행한 habit count
+- add habit
+- delete habit
+- count habit
 
 ## Project Setup
 
-```sh
+```shell
 npm install
 ```
 
 ## Start
 
-```
+```shell
 npm run start
 ```
 

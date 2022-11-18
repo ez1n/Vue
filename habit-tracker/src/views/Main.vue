@@ -19,6 +19,7 @@
 import Header from "@/components/Header.vue";
 import HabitAddForm from "@/components/HabitAddForm.vue";
 import Habits from "@/components/Habits.vue";
+import HabitRepository from "@/service/habit_repository";
 
 export default {
   name: "Main",
@@ -29,30 +30,46 @@ export default {
   },
   data() {
     return {
-      habits: [
-        {id: 1, name: "Reading", count: 0},
-        {id: 2, name: "Running", count: 0},
-        {id: 3, name: "Coding", count: 0},
-      ]
+      habits: []
     }
+  },
+  mounted() {
+    const setHabit = (data) => this.habits = data;
+    HabitRepository.getHabits(setHabit);
   },
   methods: {
     addHabit(habit) {
-      this.habits = [...this.habits, {id: Date.now(), name: habit, count: 0}]
+      const newHabit = {id: Date.now(), name: habit, count: 0}
+      HabitRepository.addHabit(newHabit)
+          .then(() => console.log('add'))
+          .catch(error => console.log(error))
     },
     deleteHabit(id) {
-      this.habits = this.habits.filter(item => item.id !== id);
+      HabitRepository.deleteHabit(id)
+          .then(() => console.log('delete'))
+          .catch(error => console.log(error))
     },
     incrementHabit(id) {
-      this.habits = this.habits.map(item =>
-          item.id === id ? {...item, count: item.count + 1} : item)
+      let newHabit;
+      this.habits.map(item => {
+        if (item.id === id) {
+          newHabit = {...item, count: item.count + 1}
+        }
+      })
+      HabitRepository.countHabit(id, newHabit)
+          .then(() => console.log('increase'))
+          .catch(error => console.log(error))
     },
     decrementHabit(id) {
-      this.habits = this.habits.map(item => {
+      let newHabit;
+      this.habits.map(item => {
         if (item.id === id) {
-          return {...item, count: item.count > 0 ? item.count - 1 : 0}
-        } else return item;
+          newHabit = {...item, count: item.count > 0 ? item.count - 1 : 0}
+        }
       })
+      HabitRepository.countHabit(id, newHabit)
+          .then(() => console.log('decrease'))
+          .catch(error => console.log(error))
     }
   },
   computed: {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <li class="habit-list" v-for="habit in habits">
+    <div class="habit-list" v-for="habit in habits">
       <Habit
           :id="habit.id"
           :name="habit.name"
@@ -8,7 +8,8 @@
           @delete="onDelete"
           @increase="onIncrease"
           @decrease="onDecrease"/>
-    </li>
+    </div>
+    <p v-if="count">there's no habits</p>
   </div>
 </template>
 
@@ -30,6 +31,11 @@ export default {
     },
     onDecrease(id) {
       this.$emit("decrease", id)
+    }
+  },
+  computed: {
+    count() {
+      return this.habits.length === 0
     }
   }
 }

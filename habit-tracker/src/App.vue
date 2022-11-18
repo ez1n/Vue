@@ -4,6 +4,6 @@ import Main from './views/Main.vue';
 
 <template>
   <div>
-    <Main />
+    <Main/>
   </div>
 </template>

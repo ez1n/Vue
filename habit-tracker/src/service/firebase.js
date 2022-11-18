@@ -9,6 +9,7 @@ import { getDatabase } from "firebase/database";
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
   authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_DB_URL,
   projectId: import.meta.env.VITE_PRJ_ID,
   storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
   appId: import.meta.env.VITE_ID,

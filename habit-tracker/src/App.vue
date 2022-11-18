@@ -3,11 +3,7 @@ import Main from './views/Main.vue';
 </script>
 
 <template>
-  <div class="main-container">
+  <div>
     <Main />
   </div>
 </template>
-
-<style scoped>
-
-</style>

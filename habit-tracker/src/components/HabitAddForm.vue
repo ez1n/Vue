@@ -1,13 +1,30 @@
 <template>
-  <section class="add-form-container">
-    <input type="text" class="add-form">
-    <button class="add-button">Add</button>
-  </section>
+  <form class="add-form-container" @submit="addHabit">
+    <input
+        class="add-form"
+        type="text"
+        required
+        placeholder="Enter Your Habit"
+        ref="habit">
+    <button type="submit" class="add-button">Add</button>
+  </form>
 </template>
 
 <script>
 export default {
-  name: 'HabitAddForm'
+  name: 'HabitAddForm',
+  data() {
+    return {
+      habit: ''
+    }
+  },
+  methods: {
+    addHabit(e) {
+      e.preventDefault();
+      this.$emit('add', this.$refs.habit.value);
+      this.$refs.habit.value='';
+    }
+  }
 }
 </script>
 
@@ -15,11 +32,12 @@ export default {
 .add-form-container {
   display: flex;
   align-items: center;
+  margin: 1rem;
 }
 
 .add-form {
-  width: 80%;
-  height: 3rem;
+  width: 50%;
+  height: 2.5rem;
   border-radius: 10px;
   font-size: x-large;
   padding-left: 10px;

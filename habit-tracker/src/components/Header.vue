@@ -2,13 +2,16 @@
   <header class="header">
     <font-awesome-icon icon="fa-solid fa-leaf" class="header-icon" />
     <h1 class="title">Habit Tracker</h1>
-    <p class="count">0</p>
+    <p class="count">{{count}}</p>
   </header>
 </template>
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  props: {
+    count: Number
+  }
 }
 </script>
 

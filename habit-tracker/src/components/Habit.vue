@@ -4,15 +4,15 @@
 
     <span class="count">{{ count }}</span>
 
-    <button class="icon-button" @click="increment">
+    <button class="icon-button" @click="increment(id)">
       <font-awesome-icon class="icon plus-icon" icon="fa-solid fa-square-plus"/>
     </button>
 
-    <button class="icon-button" @click="decrement">
+    <button class="icon-button" @click="decrement(id)">
       <font-awesome-icon class="icon minus-icon" icon="fa-solid fa-square-minus"/>
     </button>
 
-    <button class="icon-button" @click="delete(id)">
+    <button class="icon-button" @click="deleteHabit(id)">
       <font-awesome-icon class="icon delete-icon" icon="fa-solid fa-trash"/>
     </button>
   </div>
@@ -24,15 +24,17 @@ export default {
   props: {
     id: Number,
     name: String,
-    count: Number,
-    delete: Function
+    count: Number
   },
   methods: {
-    increment() {
-      return this.count ++
+    deleteHabit(id) {
+      this.$emit("delete", id)
     },
-    decrement() {
-      this.count === 0 ? this.count = 0 : this.count--
+    increment(id) {
+      this.$emit("increase", id)
+    },
+    decrement(id) {
+      this.$emit("decrease", id)
     }
   }
 }

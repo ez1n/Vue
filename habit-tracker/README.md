@@ -7,7 +7,7 @@
 ## Function
 - add habit
 - delete habit
-- count habit
+- count habits, total habits
 
 ## Project Setup
 

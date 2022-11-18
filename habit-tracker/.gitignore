@@ -16,13 +16,11 @@ coverage
 /cypress/videos/
 /cypress/screenshots/
 
-# firebase
-firebase.js
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
+.env
 *.suo
 *.ntvs*
 *.njsproj

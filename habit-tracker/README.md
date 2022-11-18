@@ -26,6 +26,8 @@ npm run start
 ## Techs
 - javascript
 - vue.js
+- vite
+- firebase
 
 ## Results
 

@@ -90,4 +90,21 @@ button {
 .delete-icon:hover {
   color: rgba(179, 47, 47, 0.8)
 }
+
+@media screen and (max-width: 480px) {
+  .habit {
+    font-size: x-large;
+  }
+
+  .count {
+    line-height: 2rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: large;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+}
 </style>

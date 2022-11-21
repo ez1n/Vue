@@ -44,7 +44,7 @@ export default {
 }
 
 .add-form:focus {
-  list-style: none;
+  outline: none;
 }
 
 .add-button {
@@ -60,5 +60,35 @@ export default {
 
 .add-button:hover {
   background-color: rgb(87, 196, 87);
+}
+
+@media screen and (max-width: 768px) {
+  .add-form {
+    width: 70%;
+    height: 2.3rem;
+    font-size: large;
+  }
+
+  .add-button {
+    font-size: large;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .add-form-container {
+    justify-content: center;
+  }
+
+  .add-form {
+    width: 100%;
+    height: 2rem;
+    font-size: medium;
+  }
+
+  .add-button {
+    font-size: medium;
+    margin: 0.5rem;
+  }
 }
 </style>

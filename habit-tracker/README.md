@@ -29,6 +29,9 @@ npm run start
 - vite
 - firebase
 
+## Deploy
+- netlify
+
 ## Results
 
 ![image](https://user-images.githubusercontent.com/78401434/202725569-e9016e01-f58a-405a-9584-7fa2bcaedc7a.png)

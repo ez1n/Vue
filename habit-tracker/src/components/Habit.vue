@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="habit-container">
     <span class="habit">{{ name }}</span>
 
     <span class="count">{{ count }}</span>
@@ -45,8 +45,13 @@ button {
   cursor: pointer;
 }
 
+.habit-container {
+  display: flex;
+  align-items: center;
+}
+
 .habit {
-  font-size: xx-large;
+  font-size: 2rem;
   margin-right: 1rem;
 }
 
@@ -56,7 +61,7 @@ button {
   line-height: 2.2rem;
   width: 2.2rem;
   height: 2.2rem;
-  font-size: x-large;
+  font-size: 1.8rem;
   border-radius: 50%;
   background-color: rgb(116, 184, 116);
   color: #fcfcfc;
@@ -91,20 +96,37 @@ button {
   color: rgba(179, 47, 47, 0.8)
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .habit {
-    font-size: x-large;
+    font-size: 1.8rem;
   }
 
   .count {
     line-height: 2rem;
     width: 2rem;
     height: 2rem;
-    font-size: large;
+    font-size: 1.5rem;
   }
 
   .icon {
     font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .habit {
+    font-size: 1.5rem;
+  }
+
+  .count {
+    line-height: 1.8rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 1.2rem;
+  }
+
+  .icon {
+    font-size: 1.8rem;
   }
 }
 </style>
